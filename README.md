@@ -13,7 +13,7 @@
 
 2. 在你要 lazyload 的元素加上 `class="bg-lazyload"`，並用 `data-image` 設定背景圖片網址。
 
-3. 其它 data- 屬性（如 data-color、data-bgcolor、data-min-height、data-viewport-width）可選用。
+3. 其它 data- 屬性（如 data-color、data-bgcolor、data-min-height、data-ratio、data-viewport-width）可選用。
 
 4. 可加上 `.bg-position-*` 來控制背景位置。
 
@@ -28,6 +28,7 @@
   data-color="#fff"
   data-bgcolor="#333"
   data-min-height="19rem"
+  data-ratio="16 / 9"
   data-viewport-width="768"
 >
   這是 lazyload 背景
@@ -40,9 +41,11 @@
 - `data-bgcolor`：背景顏色（可選）
 - `data-bgsize`：背景大小（CSS 預設 cover）
 - `data-min-height`：最小高度（可選）
+- `data-ratio`：容器比例（可選）
 - `data-viewport-width`：僅當視窗寬度大於等於此值時才載入圖片（可選，單位 px，沒有偵測 resize event）
 
 > 當 `data-viewport-width` 條件不符時，圖片不會載入，但其它 data- 設定仍會套用。
+> `data-min-height` 可能會與 `data-ratio` 有矛盾。
 
 ## 支援的背景位置 class
 - `bg-position-top`
