@@ -17,7 +17,7 @@
           el.classList.remove(lazyClass);
           el.classList.add('bg-lazyloaded');
         }
-        // min-height 設定
+        
         const minHeight = el.getAttribute('data-min-height');
         if (minHeight) el.style.minHeight = minHeight;
         const color = el.getAttribute('data-color');
@@ -26,6 +26,8 @@
         if (bgColor) el.style.backgroundColor = bgColor;
         const bgSize = el.getAttribute('data-bgsize');
         if (bgSize) el.style.backgroundSize = bgSize;
+        const ratio = el.getAttribute('data-ratio');
+        if (ratio) el.style.aspectRatio = ratio;
         // 避免重複觸發
         obs.unobserve(el);
       }
